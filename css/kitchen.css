@@ -1,0 +1,145 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: burlywood;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex-grow: 1; /* Allow the main content to grow */
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Orders Container */
+.orders-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusted for better spacing */
+    gap: 20px;
+    max-width: 1200px; /* Increased max width for larger screens */
+    margin: auto; /* Center the orders container */
+}
+
+/* Order Card Styles */
+.order-card {
+    
+    background-color: white; /* Background color */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    padding: 20px; /* Padding inside the card */
+    text-align: center; /* Left align text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Enhanced transition effects */
+    cursor: pointer; /* Indicate that it's clickable */
+}
+
+.order-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.order-card.selected {
+    border: 2px solid #f39c12; /* Highlight selected card */
+    background-color: #ecf0f1; /* Change background color for selected */
+}
+
+.order-card p {
+    margin: 8px 0; /* Increased vertical margin for paragraphs */
+    font-size: 1.2rem; /* Slightly larger font size */
+    color: #2c3e50; /* Text color */
+}
+
+.order-card ol {
+    margin-left: 20px; /* Indent list */
+}
+
+/* Button Styles */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btnLink {
+    flex: 1; /* Allow links to fill available space */
+    margin: 0 5px; /* Reduced margin between links for tidiness */
+}
+
+button {
+    color: white;
+    padding: 10px 20px; /* Adjusted padding for uniform size */
+    border: none;
+    border-radius: 5px; /* Consistent border radius */
+    font-size: 1rem; /* Uniform font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Full width for buttons */
+    min-width: 120px; /* Set a minimum width for better touch target */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+button:hover {
+    transform: scale(1.03); /* Slightly enlarge on hover for effect */
+}
+
+.btnPrepared {
+    background-color: #28a745; /* Green for prepared */
+    width: 200px;
+}
+
+.btnCancel {
+    margin-left: 50px;
+    background-color: #dc3545; /* Red for cancel */
+    width: 200px;
+}
+
+.btnRecent-order {
+    margin-left: 50px;
+    width: 200px;
+    background-color: #17a2b8; /* Aqua for recent order */
+    
+}
+
+.btnBack-order {
+    margin-left: 400px;
+    width: 200px;
+    background-color: #2c3e50; /* Dark blue for back */
+}
+
+

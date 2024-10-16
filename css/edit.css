@@ -1,0 +1,224 @@
+/* General Container Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+    font-size: 28px;
+    margin: 20px 0;
+    border-bottom: 2px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Form Styling */
+.edit-staff-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.edit-form-group {
+    margin-bottom: 20px;
+}
+
+.edit-form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.edit-form-group input,
+.edit-form-group select,
+.edit-form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-form-group input:focus,
+.edit-form-group select:focus,
+.edit-form-group textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.1);
+    background-color: #fff;
+}
+
+.edit-form-group textarea {
+    resize: vertical;
+}
+
+/* Form Actions */
+.edit-form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.edit-form-actions button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-form-actions button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.edit-cancel-btn {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-cancel-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Staff Details Table Styling */
+.staff-details-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.staff-details-table th, 
+.staff-details-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.staff-details-table th {
+    background-color: #007BFF;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.staff-details-table td {
+    font-size: 16px;
+    color: #333;
+}
+
+.staff-details-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Alternating Row Colors */
+.staff-details-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .edit-staff-form {
+        padding: 20px;
+    }
+
+    .edit-form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .edit-form-actions button,
+    .edit-cancel-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .staff-details-table, 
+    .staff-details-table th, 
+    .staff-details-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .staff-details-table tr {
+        margin-bottom: 15px;
+    }
+
+    .staff-details-table th {
+        display: none;
+    }
+
+    .staff-details-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .staff-details-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #007BFF;
+        flex: 1;
+        margin-right: 10px;
+    }
+}
+/* Action Buttons Styling */
+.action-buttons-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button,
+.edit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    margin: 0 10px; /* Spacing between buttons */
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.edit-button {
+    background-color: #007BFF;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
