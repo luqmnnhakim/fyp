@@ -32,33 +32,31 @@ $resultdisplay = $con->query($sqldisplay);
                     while ($data = $resultdisplay->fetch_assoc()) {
                         ?>
                         <div class="order-card" onclick="selectOrder(<?= $data['orid']; ?>)">
-                            <p>Table: <?= htmlspecialchars($data['ortable']); ?></p>
+                            <p>Meja: <?= htmlspecialchars($data['ortable']); ?></p>
                             
-                            <p>Order Name: <?= htmlspecialchars($data['orname']); ?></p>
+                            <p>Nama Pesanan: <?= htmlspecialchars($data['orname']); ?></p>
                             <br>
-                            <p>Order Date: <?= htmlspecialchars($data['ordate']); ?></p>
+                            <p>Tarikh Pesanan: <?= htmlspecialchars($data['ordate']); ?></p>
                         </div>
                         <?php
                     }
                 } else {
-                    echo "<p>No orders found.</p>";
+                    echo "<p>Tiada Sebarang Pesanan Yang Masuk.</p>";
                 }
                 ?>
             </div>
         </div>
 
         <div class="buttons">
-            <a href="prepared.php?cid=" id="prepareLink">
-                <button class="btnPrepared">PREPARED</button>
-            </a>
             <a href="removeorder.php?cid=" id="removeLink">
-                <button class="btnCancel">CANCEL</button>
+                <button class="btnCancel">BATAL</button>
             </a>
-            <a href="recent-order.html" class="btnLink">
-                <button class="btnRecent-order">RECENT ORDER</button>
-            </a>
+            <a href="recent-order.php" class="btnLink">
+    <button class="btnRecent-order">PESANAN LEPAS</button>
+</a>
+
             <a href="staff.php" class="btnLink">
-                <button class="btnBack-order">BACK</button>
+                <button class="btnBack-order">KEMBALI</button>
             </a>
         </div>
 

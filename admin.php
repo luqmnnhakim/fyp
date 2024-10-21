@@ -19,20 +19,20 @@ if($_SESSION['user']!=''){
                 <h2>Admin</h2>
                 <nav>
                     <ul>
-                        <li><a href="adminsales.php" target="content-frame">Sales</a></li>
-                        <li><a href="menudata.php" target="content-frame">Menu Info</a></li>
-                        <li><a href="menuform.php" target="content-frame">Add Menu</a></li>
-                        <li><a href="staffinfo.php" target="content-frame">Staff Info</a></li>
+                        <li><a href="sales.php" target="content-frame">Jualan</a></li>
+                        <li><a href="menudata.php" target="content-frame">Info Menu</a></li>
+                        <li><a href="menuform.php" target="content-frame">Tambah Menu</a></li>
+                        <li><a href="staffinfo.php" target="content-frame">Info Staff</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="main-content">
                 <header>
-                    <h1>Welcome, <?php echo $_SESSION['user'];?></h1>
+                    <h1>Hai, <?php echo $_SESSION['user'];?></h1>
                     <button class="logout-btn" onclick="window.location.href='logout.php'">Logout</button>
                 </header>
-                <iframe name="content-frame" class="content-frame" src="adminsales.php"></iframe>
+                <iframe name="content-frame" class="content-frame" src="sales.php"></iframe>
             </div>
         </div>
     </body>

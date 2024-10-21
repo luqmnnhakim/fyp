@@ -1,47 +1,49 @@
 <?php
 include('database/connection.php');
-//$_POST -super global variable
-//if method(form)=post-> receive using $_POST[]
-//if method(form)
 
-if(isset($_POST['add']))
-{
-    
-    //declare variable
-    $menutyp = $_POST['type'];
-    $menunam = $_POST['name'];
-    $menupric = $_POST['price'];
+if ($_SESSION['user'] != '') {
+    if (isset($_POST['add'])) {
+        // Get form data
+        $type = $_POST['type'];
+        $name = $_POST['name'];
+        $price = $_POST['price'];
+        $description = $_POST['description']; // Get description from form
+        $image = $_FILES['image'];
 
-    //input validation
-    if(empty($menutyp) || empty($menunam) || empty($menupric))
-    {
-    ?>
-    <script>
-        alert("Please insert all required info");
-        window.location='menuform.php';
-    </script>
-    <?php
-    }
-    else
-    {
-        //add record to the menu_info table
-        $sqladd = "INSERT INTO menu_info (mentype, menname, menprice) VALUES ('$menutyp', '$menunam', '$menupric')";
-        $resultadd = $con->query($sqladd);
+        // Handle the image upload
+        $targetDir = "uploads/"; // Ensure this directory exists
+        $targetFile = $targetDir . basename($image["name"]);
+        $uploadOk = 1;
 
-        if($resultadd) {
-            ?>
-    <script>
-        alert("Menu has been added");
-    </script>
-    <?php
-            header('Location: menudata.php');
+        // Check if image file is an actual image
+        $check = getimagesize($image["tmp_name"]);
+        if ($check === false) {
+            echo "Ini Bukan Gambar.";
+            $uploadOk = 0;
+        }
+
+        // Additional validations can go here...
+
+        // If everything is ok, try to upload file
+        if ($uploadOk == 0) {
+            echo "Maaf, Sila Cuba Lagi.";
         } else {
-            echo "Error: " . $con->error;
+            if (move_uploaded_file($image["tmp_name"], $targetFile)) {
+                // Insert into menu table, including the description
+                $sqlInsert = "INSERT INTO menu (category, name, price, description, image) VALUES ('$type', '$name', '$price', '$description', '$targetFile')";
+                
+                if ($con->query($sqlInsert) === TRUE) {
+                    header("Location: menudata.php?added=yes"); // Redirect to menudata.php with 'added' parameter
+                    exit; // Always use exit after a header redirect
+                } else {
+                    echo "Error: " . $con->error;
+                }
+            } else {
+                echo "Maaf, Sila Cuba Lagi.";
+            }
         }
     }
-}
-else
-{
-    echo "Please register first";
+} else {
+    header('location:login.php');
 }
 ?>

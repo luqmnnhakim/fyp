@@ -33,18 +33,18 @@ if($_SESSION['user']!=''){
             <h2>Order Details</h2>
             <img src="images/order.png" alt="Order Details" class="card-img">
             <br>
-            <a href="kitchen.php"><button class="action-btn">View Orders</button></a>
+            <a href="kitchen.php"><button class="action-btn">Lihat Pesanan</button></a>
         </div>
         <div class="card">
             <h2>Manage Tables</h2>
             <img src="images/table.png" alt="Manage Tables" class="card-img">
-            <a href="cashier.php"><button class="action-btn">Manage Tables</button></a>
+            <a href="cashier.php"><button class="action-btn">Urus Meja</button></a>
         </div>
         <div class="card">
             <h2>Update Menu</h2>
             <img src="images/update.png" alt="Update Menu" class="card-img">
             <p></p>
-            <a href="updateorder.php"><button class="action-btn">Update Now</button></a>
+            <a href="updateorder.php"><button class="action-btn">Kemaskini Pesanan</button></a>
         </div>
     </section>
 

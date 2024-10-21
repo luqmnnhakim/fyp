@@ -15,7 +15,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != '') {
     <body>
         <div class="container">
             <header class="header">
-                <h1>Welcome to Aida Station</h1>
+                <h1>Selamat Datang Ke Aida Station</h1>
                 <nav>
                     <ul>
                         <li><a href="staff.php">Menu</a></li>
@@ -26,7 +26,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != '') {
 
             <div class="main-content">
                 <section class="table-selection">
-                    <h2>Select a Table</h2>
+                    <h2>Pilih Meja</h2>
                     <div class="table-grid">
                         <!-- Add table links from 1 to 27 -->
                         <a href="order.php?table=1" class="table-number">1</a>
@@ -63,7 +63,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != '') {
                 <br>
                 <br>
                 </section>
-                <a href="staff.php" class="button">Back</a>
+                <a href="staff.php" class="button">Kembali</a>
             </div>
         </div>
     </body>

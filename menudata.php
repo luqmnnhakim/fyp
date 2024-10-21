@@ -1,12 +1,11 @@
 <?php
 include('database/connection.php');
-if($_SESSION['user']!=''){
-    //execute command at this page
+if ($_SESSION['user'] != '') {
+    // Execute command at this page
+    $sqldisplay = "SELECT * FROM menu";
+    $resultdisplay = $con->query($sqldisplay);
 
-$sqldisplay="SELECT * FROM menu_info";
-$resultdisplay=$con->query($sqldisplay);
-
-if($resultdisplay->num_rows > 0) {
+    if ($resultdisplay->num_rows > 0) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,57 +13,98 @@ if($resultdisplay->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Data</title>
     <link rel="stylesheet" href="css/admin.css">
+    <style>
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+    </style>
+    <script>
+        function showPopup(message) {
+            var popup = document.getElementById('update-popup');
+            popup.innerText = message; // Set the message
+            popup.style.display = 'block'; // Show the popup
+            setTimeout(function() {
+                popup.style.display = 'none'; // Hide after 3 seconds
+            }, 3000);
+        }
+    </script>
 </head>
-<body class=body-menudata>
+<body class="body-menudata">
 
     <div class="menu-data-container">
-        <h2 class=h2-menudata>Menu Data</h2>
+        <h2 class="h2-menudata">Menu Data</h2>
         <table class="table-menudata">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Type</th>
-                    <th>Name</th>
-                    <th>Price (RM)</th>
+                    <th>Kategori</th>
+                    <th>Nama</th>
+                    <th>Harga (RM)</th>
                     <th></th>
                     <th>Action</th>
                 </tr>
             </thead>
             <?php
             $count = 1;
-            while($value=$resultdisplay->fetch_assoc()) {
+            while ($value = $resultdisplay->fetch_assoc()) {
             ?>
             <tbody>
                 <tr>
                     <td><?= $count; ?></td>
-                    <td><?= $value['mentype']; ?></td>
-                    <td><?= $value['menname']; ?></td>
-                    <td><?= $value['menprice']; ?></td>
+                    <td><?= $value['category']; ?></td>
+                    <td><?= $value['name']; ?></td>
+                    <td><?= $value['price']; ?></td>
                     <td></td>
                     <td>
-    <button class="edit-btn" onclick="window.location.href='editmenu.php?cid=<?= $value['menuid']; ?>';">Edit</button>
-    <button class="remove-btn" onclick="if(confirm('Are you sure you want to delete?')) { window.location.href='removemenu.php?cid=<?= $value['menuid']; ?>'; }">Remove</button>
-
-</td>
-
+                        <button class="edit-btn" onclick="window.location.href='editmenu.php?cid=<?= $value['id']; ?>';">Ubah</button>
+                        <button class="remove-btn" onclick="if(confirm('Adakah Anda Pasti Dengan Pilihan Anda?')) { window.location.href='removemenu.php?cid=<?= $value['id']; ?>'; }">Buang</button>
+                    </td>
                 </tr>
-                <!-- More rows can be added here -->
             </tbody>
             <?php
-    $count++;
-       }
-}   else{
-    echo "No record found in the table";
-}
-?>
+                $count++;
+            }
+            ?>
         </table>
     </div>
+
+    <!-- Popup Notification -->
+    <div id="update-popup" class="popup" style="<?php echo (isset($_GET['added']) || isset($_GET['updated'])) ? 'display: block;' : 'display: none;'; ?>">
+        <?php
+            if (isset($_GET['added'])) {
+                echo 'Menu Telah Ditambah!';
+            } elseif (isset($_GET['updated'])) {
+                echo 'Menu Telah Dikemaskini!';
+            }
+        ?>
+    </div>
+
+    <script>
+        // Show the popup based on the action
+        <?php if (isset($_GET['added'])): ?>
+            showPopup('Menu Telah Ditambah!');
+        <?php elseif (isset($_GET['updated'])): ?>
+            showPopup('Menu Telah Dikemaskini!');
+        <?php endif; ?>
+    </script>
 
 </body>
 </html>
 <?php
-}
-else{
+    } else {
+        echo "Tiada Pesanan Yang Dibuat";
+    }
+} else {
     header('location:login.php');
 }
 ?>

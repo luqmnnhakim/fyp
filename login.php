@@ -12,19 +12,19 @@
         <h2 class=h2-login>Login</h2>
         <form method="POST" action="loginprocess.php">
             <div class="form-grouplogin">
-                <label for="username">Username</label>
-                <input type="text" name="username" placeholder="Enter your username" required>
+                <label for="username">Nama Pengguna</label>
+                <input type="text" name="username" placeholder="Masukkan Nama Anda" required>
             </div>
             <div class="form-grouplogin">
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Enter your password" required>
+                <label for="password">KataLaluan</label>
+                <input type="password" name="password" placeholder="Masukkan KataLaluan Anda" required>
             </div>
             <div class="form-grouplogin">
-                <button type="submit" name="login">Login</button>
+                <button type="submit" name="login">Masuk</button>
             </div>
             
             <div class="form-grouplogin">
-                <a href="#" class="forget-password">Forget Password?</a>
+                <a href="#" class="forget-password">Lupa KataLaluan?</a>
             </div>
         </form>
     </div>

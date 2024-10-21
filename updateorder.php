@@ -14,31 +14,31 @@ if($_SESSION['user']!=''){
 <body>
     <div class="container">
         <header class="header">
-            <h1>Update Order</h1>
+            <h1>Kemaskini Pesanan</h1>
         </header>
 
         <section class="main-content">
             <form action="updateorder.php" method="POST" class="update-order-form">
-                <label for="order-id">Order ID:</label>
+                <label for="order-id">ID Pesanan:</label>
                 <input type="text" id="order-id" name="order_id" required>
 
-                <label for="table-number">Table Number:</label>
+                <label for="table-number">Nombor Meja:</label>
                 <input type="text" id="table-number" name="table_number" required>
 
-                <label for="order-items">Order Items:</label>
+                <label for="order-items"> Nama Pesanan:</label>
                 <textarea id="order-items" name="order_items" rows="4" required></textarea>
 
-                <label for="total-price">Total Price (RM):</label>
+                <label for="total-price">Jumlah Harga (RM):</label>
                 <input type="number" id="total-price" name="total_price" required step="0.01">
 
                 <label for="notes">Additional Notes:</label>
                 <textarea id="notes" name="notes" rows="3"></textarea>
 
-                <button type="submit" class="action-btn">Update Order</button>
+                <button type="submit" class="action-btn">Kemaskini</button>
             </form>
             <br>
             <a href="staff.php" class="btnLink">
-                <button class="action-btn">BACK</button>
+                <button class="action-btn">Kembali</button>
             </a>
         </section>
     </div>

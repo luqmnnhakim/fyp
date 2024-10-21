@@ -22,15 +22,15 @@ $data=$resultdisplay->fetch_assoc();
     <h1>Staff Details</h1>
     <table class="staff-details-table">
         <tr>
-            <th>Name</th>
+            <th>Nama</th>
             <td data-label="Name"><?= htmlspecialchars($data['adname']); ?></td>
         </tr>
         <tr>
-            <th>IC No</th>
+            <th>No. IC</th>
             <td data-label="IC No"><?= htmlspecialchars($data['adic']); ?></td>
         </tr>
         <tr>
-            <th>Gender</th>
+            <th>Jantina</th>
             <td data-label="Gender"><?= htmlspecialchars($data['adgender']); ?></td>
         </tr>
         <tr>
@@ -38,14 +38,14 @@ $data=$resultdisplay->fetch_assoc();
             <td data-label="Email"><?= htmlspecialchars($data['ademail']); ?></td>
         </tr>
         <tr>
-            <th>Address</th>
+            <th>Alamat</th>
             <td data-label="Address"><?= htmlspecialchars($data['address']); ?></td>
         </tr>
     </table>
 
     <div class="action-buttons-container">
-        <a href="staffinfo.php" class="back-button">Back</a>
-        <a href="editstaff.php?cid=<?= htmlspecialchars($data['adid']); ?>" class="edit-button">Edit</a>
+        <a href="staffinfo.php" class="back-button">Kembali</a>
+        <a href="editstaff.php?cid=<?= htmlspecialchars($data['adid']); ?>" class="edit-button">Kemaskini</a>
     </div>
 
     <?php
@@ -54,7 +54,7 @@ $data=$resultdisplay->fetch_assoc();
         {
             ?>
     <script>
-        alert("Data has been updated into the competitors table");
+        alert("Data has been updated into the admin_info table");
     </script>
     <?php
         }

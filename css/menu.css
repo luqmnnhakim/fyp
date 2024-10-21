@@ -1,0 +1,240 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #5A5A5A; /* A soft gray for h2 */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background-color: #B22222; /* Dark red color */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.header label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.header input[type="number"] {
+    padding: 10px;
+    width: 120px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.header input[type="number"]:focus {
+    border-color: #B22222; /* Dark red on focus */
+}
+
+.header button {
+    background-color: #ffffff;
+    color: #B22222; /* Dark red for button text */
+    padding: 10px 20px;
+    border: 2px solid #B22222; /* Dark red border */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header button:hover {
+    background-color: #8B0000; /* Darker red on hover */
+    color: white;
+}
+
+/* Styling for Category Headers */
+h3 {
+    background-color: #B22222; /* Dark red for category headers */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Styling for Menu Items within each category */
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.menu-item strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #000;
+}
+
+.menu-item button {
+    background-color: #B22222; /* Dark red for menu item buttons */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+    background-color: #8B0000; /* Darker red on hover */
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #B22222; /* Dark red for popup */
+    color: white;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.menu-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.menu-item button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.order-btn {
+    background: #B22222; /* Dark red for order button */
+    color: white;
+}
+
+.detail-btn {
+    background: #007BFF; /* Blue for detail button */
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-item {
+        width: calc(50% - 20px); /* Two items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-item {
+        width: 100%; /* One item per row on mobile */
+    }
+}
