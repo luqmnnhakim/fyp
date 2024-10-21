@@ -51,7 +51,7 @@
             <ul>
                 <li><a href="mainpage.php">Home</a></li>
                 <li><a href="locate.php">Locate Us</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
                 <li><a href="menu.php">Order Here</a></li>
             </ul>
         </nav>
@@ -105,7 +105,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2024 Aida Station. All rights reserved.</p>
+    <p>&copy; 2024 Aida Station. Customer Always Right.</p>
 </footer>
 
 <script>

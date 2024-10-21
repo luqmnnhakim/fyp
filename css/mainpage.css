@@ -79,10 +79,9 @@ nav ul li a:hover {
     color: #fff; 
     background-color: maroon; 
     transform: translateY(-2px); 
-    border-radius: 25px;
 }
 
-/* Hamburger Menu Styles */
+/* CSS for hamburger menu */
 .hamburger {
     display: none; /* Hide by default */
     flex-direction: column;
@@ -90,11 +89,31 @@ nav ul li a:hover {
 }
 
 .hamburger div {
-    width: 30px;
+    width: 25px;
     height: 3px;
-    background-color: #333;
-    margin: 5px 0; /* Space between bars */
-    transition: all 0.3s ease; /* Smooth transition */
+    background-color: #333; /* Change this to your preferred color */
+    margin: 4px 0;
+}
+
+/* Show hamburger menu on small screens */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger */
+    }
+    
+    #nav-menu {
+        display: none; /* Hide the nav menu by default */
+        flex-direction: column;
+        position: absolute;
+        background-color: white; /* Change based on your design */
+        top: 50px; /* Adjust based on your header height */
+        width: 100%;
+        z-index: 1;
+    }
+
+    #nav-menu.active {
+        display: flex; /* Show menu when active */
+    }
 }
 
 /* Button Styles */
@@ -311,11 +330,6 @@ form button:hover {
         margin-bottom: 10px; /* Space between links */
     }
 
-    .hamburger {
-        display: flex; /* Show hamburger icon on small screens */
-        cursor: pointer; /* Change cursor to pointer */
-    }
-
     .login-button {
         width: 100%; 
         max-width: none; /* Reset max-width */
@@ -325,38 +339,10 @@ form button:hover {
 
     .advertisement {
         font-size: 18px; 
-        padding: 15px 0; 
     }
 
-    .social-links a {
-        margin: 5px; 
-    }
-
-    .map-container {
-        margin: 15px 0; 
-    }
-
-    form {
-        padding: 15px; 
-    }
-}
-
-/* Additional Responsive Styles for Very Small Screens */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 24px; 
-    }
-
-    .login-button {
-        padding: 12px; /* Adjust padding for small screens */
-    }
-
-    .advertisement {
-        font-size: 16px; 
-        padding: 10px 0; 
-    }
-
-    form button {
-        padding: 8px 16px; 
+    .restaurant-description,
+    .opening-hours {
+        font-size: 14px; 
     }
 }

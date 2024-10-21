@@ -13,13 +13,20 @@
         <img src="images/logo.png" alt="Logo" class="logo"> <!-- Adjust the logo path -->
         <h1>Aida Station</h1>
         <nav>
-            <ul>
-                <li><a href="mainpage.php">Home</a></li>
-                <li><a href="locate.php">Locate Us</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
-                <li><a href="menu.php">Order Now</a></li>
-            </ul>
-        </nav>
+        <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<nav id="nav">
+    <ul>
+        <li><a href="mainpage.php">Home</a></li>
+        <li><a href="locate.php">Locate Us</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
+        <li><a href="menu.php">Order Here</a></li>
+    </ul>
+</nav>
+
         <button class="login-button">Login</button>
     </div>
 </header>
@@ -46,8 +53,19 @@
 </main>
 
 <footer>
-    <p>&copy; 2024 Aida Station. All rights reserved.</p>
+    <p>&copy; 2024 Aida Station. Customer Always Right.</p>
 </footer>
+
+<!-- JavaScript code added directly to the page -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+
+hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+
+</script>
 
 </body>
 </html>

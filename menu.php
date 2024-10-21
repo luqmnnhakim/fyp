@@ -70,15 +70,18 @@ $categories = ['Makanan', 'Minuman', 'Set']; // Define menu categories
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <h1>SELAMAT DATANG KE AIDA STATION</h1>
-            <br>
-            <form method="GET" action="">
-                <label for="table_number">Nombor Meja:</label>
-                <input type="number" name="table_number" id="table_number" required>
-                <button type="submit">Pilih</button>
-            </form>
-        </header>
+        <!-- Add this button in the header section -->
+<header class="header">
+    <h1>SELAMAT DATANG KE AIDA STATION</h1>
+    <br>
+    <form method="GET" action="">
+        <label for="table_number">Nombor Meja:</label>
+        <input type="number" name="table_number" id="table_number" required>
+        <button type="submit">Pilih</button>
+    </form>
+    <a href="mainpage.php" class="back-btn">Back</a> <!-- Back button -->
+</header>
+
 
         <div class="main-content">
             <?php if (isset($_GET['table_number'])): // Check if table number is set ?>
@@ -100,6 +103,7 @@ $categories = ['Makanan', 'Minuman', 'Set']; // Define menu categories
                                     <p>Price: RM<?php echo htmlspecialchars($menuItem['price']); ?></p>
                                     <br>
                                     <button class="detail-btn" onclick="showModal(<?php echo $menuItem['id']; ?>)">Detail</button>
+                                    <br>
                                     <form method="POST" action="">
                                         <input type="hidden" name="table_number" value="<?php echo intval($_GET['table_number']); ?>">
                                         <input type="hidden" name="menu_item_id" value="<?php echo $menuItem['id']; ?>">

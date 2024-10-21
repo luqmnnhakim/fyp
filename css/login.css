@@ -1,0 +1,192 @@
+/* General Styles */
+body.body-login {
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+    margin: 0;
+    padding: 0;
+    background-image: url('images/green.png'); /* Set the background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height for centering */
+    position: relative; /* For overlay positioning */
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white for form */
+    padding: 40px 30px; /* Generous padding */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    width: 100%;
+    max-width: 400px; /* Restrict width for readability */
+    transform: translateY(0); /* Start position for animation */
+    opacity: 0; /* Start with opacity 0 */
+    animation: fadeIn 0.6s forwards; /* Fade in effect */
+}
+
+/* Fade in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading Style */
+h2.h2-login {
+    text-align: center; /* Centered heading */
+    color: #333; /* Darker text for contrast */
+    margin-bottom: 30px; /* Space below the heading */
+    font-size: 32px; /* Increased font size for emphasis */
+    font-weight: 700; /* Bolder for prominence */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
+/* Form Group Styles */
+.form-grouplogin {
+    margin-bottom: 25px; /* Space between form groups */
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 8px; /* Space below labels */
+    font-weight: 500; /* Medium weight for labels */
+    color: #555; /* Soft gray for labels */
+    font-size: 15px; /* Slightly larger font size */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+label:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Full width inputs */
+    padding: 15px 20px; /* Increased padding for comfort */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* No outline on focus */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    font-size: 15px; /* Consistent font size */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Light blue shadow */
+    transform: scale(1.02); /* Slightly scale up on focus */
+}
+
+/* Button Styles */
+button {
+    width: 100%; /* Full width button */
+    padding: 15px; /* Generous padding */
+    background-color: #007BFF; /* Bright blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Larger font size */
+    font-weight: 600; /* Bold text */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Transition for background color, scaling, and shadow */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+button:active {
+    transform: translateY(0); /* Reset on click */
+}
+
+/* Forget Password Link */
+.forget-password {
+    display: block; /* Block display for the link */
+    text-align: center; /* Center the link */
+    color: #007BFF; /* Blue color */
+    margin-top: 15px; /* Space above the link */
+    font-size: 14px; /* Font size for link */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.forget-password:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Overlay for Background */
+body.body-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1; /* Position behind content */
+}
+
+/* Ensure content is above the overlay */
+.login-container {
+    position: relative; /* Positioning context for child elements */
+    z-index: 2; /* Bring form to the front */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 35px 25px; /* Reduce padding on smaller screens */
+    }
+
+    h2.h2-login {
+        font-size: 28px; /* Slightly smaller font size for heading */
+    }
+
+    button {
+        font-size: 15px; /* Smaller font size on smaller screens */
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 12px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 25px 15px; /* Further reduce padding on mobile */
+    }
+
+    h2.h2-login {
+        font-size: 24px; /* Adjust heading size for mobile */
+    }
+
+    button {
+        font-size: 14px; /* Smaller font size on mobile */
+    }
+
+    label {
+        font-size: 14px; /* Adjust label size for mobile */
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        font-size: 14px; /* Adjust input font size for mobile */
+    }
+}
+
+/* Touch Target Enhancements for Mobile */
+button, .forget-password {
+    touch-action: manipulation; /* Improve touch response */
+}
