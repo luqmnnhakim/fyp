@@ -27,7 +27,7 @@
     </ul>
 </nav>
 
-        <button class="login-button">Login</button>
+<button class="login-button" onclick="window.location.href='login.php';">Login</button>
     </div>
 </header>
 
