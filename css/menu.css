@@ -302,3 +302,14 @@ h3 {
     }
 }
 
+/* CSS for the logo below the h1 with shadow */
+.header-logo {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    border-radius: 8px; /* Rounded corners (optional) */
+}
+
+/* Additional styling if needed */
+.header-logo:hover {
+    opacity: 0.8; /* Slight hover effect */
+    transition: opacity 0.3s ease-in-out; /* Smooth hover transition */
+}

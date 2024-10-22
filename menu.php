@@ -71,9 +71,10 @@ $categories = ['Makanan', 'Minuman', 'Set']; // Define menu categories
 <body>
     <div class="container">
         <!-- Add this button in the header section -->
-<header class="header">
+        <header class="header">
     <h1>SELAMAT DATANG KE AIDA STATION</h1>
-    <br>
+    <img src="images/logo.png" alt="Aida Station Logo" class="header-logo" style="width: 150px; margin-top: 10px;"> <!-- Insert the logo below the heading -->
+
     <form method="GET" action="">
         <label for="table_number">Nombor Meja:</label>
         <input type="number" name="table_number" id="table_number" required>
@@ -81,6 +82,7 @@ $categories = ['Makanan', 'Minuman', 'Set']; // Define menu categories
     </form>
     <a href="mainpage.php" class="back-btn">Back</a> <!-- Back button -->
 </header>
+
 
 
         <div class="main-content">

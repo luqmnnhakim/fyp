@@ -47,7 +47,7 @@
             <div></div>
             <div></div>
         </div>
-        <nav id="nav">
+        <nav id="nav-menu">
             <ul>
                 <li><a href="mainpage.php">Home</a></li>
                 <li><a href="locate.php">Locate Us</a></li>
@@ -64,7 +64,7 @@
     <p>Your one-stop restaurant for everything you need.</p>
 
     <!-- QR Code (Hidden by default) -->
-    <img id="qr-code" src="images/qrcode.png" alt="QR Code" />
+    <img id="qr-code" src="images/qrcode.jpg" alt="QR Code" />
 
     <!-- Button to show/hide the QR code -->
     <button class="show-qr-button" id="qr-button" onclick="showQRCode()">Show QR Code</button>
@@ -83,7 +83,7 @@
         </div>
     </div>
     <div class="advertisement">
-        Special offer! Get 20% off your first order!
+        Dapatkan Diskaun Sebanyak 20% Untuk Pengguna Pertama Kami!
     </div>
 
     <section class="restaurant-description">
@@ -135,12 +135,18 @@
         }
     }
 
+    document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
-    const nav = document.getElementById('nav');
+    const navMenu = document.getElementById('nav-menu');
 
-    hamburger.addEventListener('click', () => {
-        nav.classList.toggle('active');
+    hamburger.addEventListener('click', function() {
+        // Toggle class 'active' pada kedua elemen: hamburger dan navMenu
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
     });
+});
+
+
 </script>
 </body>
 </html>

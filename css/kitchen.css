@@ -28,7 +28,7 @@ body {
 
 /* Header Styles */
 .header {
-    background-color: burlywood;
+    background-color: maroon;
     padding: 20px;
     text-align: center;
     color: #fff;
@@ -55,11 +55,11 @@ body {
     gap: 20px;
     max-width: 1200px; /* Increased max width for larger screens */
     margin: auto; /* Center the orders container */
+    padding: 0 20px; /* Add horizontal padding */
 }
 
 /* Order Card Styles */
 .order-card {
-    
     background-color: white; /* Background color */
     border-radius: 12px; /* Rounded corners */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
@@ -75,7 +75,7 @@ body {
 }
 
 .order-card.selected {
-    border: 2px solid #f39c12; /* Highlight selected card */
+    border: 2px solid maroon; /* Highlight selected card */
     background-color: #ecf0f1; /* Change background color for selected */
 }
 
@@ -92,6 +92,7 @@ body {
 /* Button Styles */
 .buttons {
     display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
     justify-content: space-between;
     margin-top: 20px;
 }
@@ -120,26 +121,67 @@ button:hover {
 
 .btnPrepared {
     background-color: #28a745; /* Green for prepared */
-    width: 200px;
 }
 
 .btnCancel {
-    margin-left: 50px;
     background-color: #dc3545; /* Red for cancel */
-    width: 200px;
 }
 
 .btnRecent-order {
-    margin-left: 50px;
-    width: 200px;
     background-color: #17a2b8; /* Aqua for recent order */
-    
 }
 
 .btnBack-order {
-    margin-left: 400px;
-    width: 200px;
     background-color: #2c3e50; /* Dark blue for back */
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem; /* Smaller title font size for mobile */
+    }
 
+    .order-card p {
+        font-size: 1rem; /* Smaller text for paragraphs on mobile */
+    }
+
+    button {
+        margin-bottom: 10px; /* Add spacing between buttons */
+    }
+
+    .btnBack-order {
+        margin-left: 0; /* Remove left margin for back button on mobile */
+    }
+
+    .btnCancel, .btnRecent-order {
+        margin-left: 0; /* Remove left margin for buttons on mobile */
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+        align-items: center; /* Center buttons */
+        margin-top: 10px; /* Adjust margin for buttons */
+    }
+
+    .orders-container {
+        padding: 0 10px; /* Add horizontal padding for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .orders-container {
+        gap: 10px; /* Reduced gap between cards for mobile */
+    }
+
+    .order-card {
+        padding: 15px; /* Adjusted padding for smaller screens */
+    }
+
+    .order-card p {
+        font-size: 0.9rem; /* Smaller text for paragraphs on very small screens */
+    }
+
+    .header {
+        padding: 15px; /* Reduce padding in header for small screens */
+    }
+}

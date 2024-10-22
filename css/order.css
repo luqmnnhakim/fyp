@@ -24,7 +24,7 @@ body {
 /* Header Styles */
 .header {
     text-align: center;
-    background-color: #d7b68d; /* Light brown color */
+    background-color: maroon; /* Light brown color */
     padding: 20px;
     border-radius: 8px;
 }
