@@ -136,7 +136,7 @@ $categories = ['Makanan', 'Minuman', 'Set']; // Define menu categories
 
     <!-- Popup Notification -->
     <div id="order-popup" class="popup" style="<?php echo $orderSuccess ? 'display: block;' : ''; ?>">
-        Your order has been successfully added!
+        Pesanan Anda Telah Direkod!
     </div>
 
     <script>

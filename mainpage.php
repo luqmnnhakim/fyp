@@ -60,7 +60,7 @@
 </header>
 
 <main>
-    <h2>Selamat Datang Ke Aida Station!</h2>
+    <h2>Selamat Datang Ke Aida Station !</h2>
     <p>Your one-stop restaurant for everything you need.</p>
 
     <!-- QR Code (Hidden by default) -->

@@ -32,7 +32,7 @@
         if(@$_GET['invalid']=='yes'){
             ?>
     <script>
-        alert("Username or Password incorrect ");
+        alert("Sila Masukkan Nama atau KataLaluan Yang Betul ");
     </script>
         <?php
         }
