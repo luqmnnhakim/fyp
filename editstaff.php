@@ -14,8 +14,12 @@ if ($_SESSION['user'] != '') {
         $gender = $_POST['gender'];
         $email = $_POST['email'];
         $address = $_POST['address'];
+        $username = $_POST['username']; // Get the username
+        $password = $_POST['password']; // Get the password
 
-        $cmdUpdate = "UPDATE admin_info SET adname='$name', adic='$ic', adgender='$gender', ademail='$email', address='$address' WHERE adid='$id'";
+        // Update statement with username and password
+        $cmdUpdate = "UPDATE admin_info SET adname='$name', adic='$ic', adgender='$gender', ademail='$email', address='$address', adusername='$username', adpassword='$password' WHERE adid='$id'";
+        
         if ($con->query($cmdUpdate) === TRUE) {
             echo "<script>
                 alert('Staff details updated successfully.');
@@ -60,6 +64,14 @@ if ($_SESSION['user'] != '') {
         <div class="edit-form-group">
             <label for="address">Alamat</label>
             <textarea id="address" name="address" rows="4" required><?= htmlspecialchars($data['address']); ?></textarea>
+        </div>
+        <div class="edit-form-group">
+            <label for="username">Nama Pengguna</label>
+            <input type="text" id="username" name="username" value="<?= htmlspecialchars($data['adusername']); ?>" required>
+        </div>
+        <div class="edit-form-group">
+            <label for="password">Kata Laluan</label>
+            <input type="password" id="password" name="password" value="<?= htmlspecialchars($data['adpassword']); ?>" required>
         </div>
         <div class="edit-form-actions">
             <button type="submit" name="update">Kemaskini</button>

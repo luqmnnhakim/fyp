@@ -13,7 +13,7 @@ if ($_SESSION['user'] != '') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aida Station - Recent Orders</title>
-    <link rel="stylesheet" href="css/kitchen.css">
+    <link rel="stylesheet" href="css/orderdetail.css">
 </head>
 <body>
     <div class="container">
@@ -46,7 +46,7 @@ if ($_SESSION['user'] != '') {
         </div>
 
         <div class="buttons">
-            <a href="staff.php" class="btnLink">
+            <a href="orderdetail.php" class="btnLink">
                 <button class="btnBack-order">BACK</button>
             </a>
         </div>

@@ -41,6 +41,14 @@ $data=$resultdisplay->fetch_assoc();
             <th>Alamat</th>
             <td data-label="Address"><?= htmlspecialchars($data['address']); ?></td>
         </tr>
+        <tr>
+            <th>Nama Pengguna</th>
+            <td data-label="Address"><?= htmlspecialchars($data['adusername']); ?></td>
+        </tr>
+        <tr>
+            <th>KataLaluan</th>
+            <td data-label="Address"><?= htmlspecialchars($data['adpassword']); ?></td>
+        </tr>
     </table>
 
     <div class="action-buttons-container">

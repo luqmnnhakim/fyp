@@ -17,6 +17,7 @@ body {
     color: #333;
 }
 
+
 /* Header Styles */
 header {
     background: linear-gradient(135deg, #6b0404, #620303);
@@ -175,7 +176,7 @@ footer {
     font-size: 1.1rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
     flex: 1; /* Allow buttons to grow and fill space */
-    min-width: 120px; /* Minimum width for buttons */
+    max-width: fit-content; /* Minimum width for buttons */
     margin: 5px; /* Space between buttons */
 }
 

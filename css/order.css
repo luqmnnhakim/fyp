@@ -63,7 +63,7 @@ textarea {
 
 /* Button Styles */
 .action-btn {
-    background-color: #28a745; /* Green color */
+    background-color: maroon; /* Green color */
     color: white;
     padding: 10px;
     border: none;
@@ -71,10 +71,11 @@ textarea {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 1rem; /* Font size for button */
+    min-width: max-content;;
 }
 
 .action-btn:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: darkred; /* Darker green on hover */
 }
 
 /* Back Link Styles */

@@ -252,42 +252,86 @@ header h1 {
     border-radius: 5px;
 }
 
+/* General Button Styles */
 button {
-    padding: 8px 15px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
+    padding: 8px 15px; /* Consistent padding */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 14px; /* Uniform font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+    display: inline-flex; /* Allow alignment for icons if needed */
+    align-items: center; /* Center items vertically */
 }
 
+/* Edit Button Styles */
 .edit-btn {
-    background-color: #ffc107;
-    color: white;
+    background-color: #ffc107; /* Yellow background */
+    color: white; /* Text color */
 }
 
 .edit-btn:hover {
-    background-color: #e0a800;
+    background-color: #e0a800; /* Darker yellow on hover */
 }
 
-.view-btn {
-    background-color: #28a745;
-    color: white;
-    margin-left: 10px;
+/* View Button Styles */
+.view-btn, .view-btnSales {
+    background-color: #28a745; /* Green background */
+    color: white; /* Text color */
+    margin-left: 10px; /* Space between buttons */
 }
 
-.view-btn:hover {
-    background-color: #218838;
+.view-btn:hover, .view-btnSales:hover {
+    background-color: #218838; /* Darker green on hover */
 }
 
-.remove-btn {
-    background-color: #dc3545;
-    color: white;
-    margin-left: 10px;
+/* Remove Button Styles */
+.remove-btn, .remove-btnSales {
+    background-color: #dc3545; /* Red background */
+    color: white; /* Text color */
+    margin-left: 10px; /* Space between buttons */
 }
 
-.remove-btn:hover {
-    background-color: #c82333;
+.remove-btn:hover, .remove-btnSales:hover {
+    background-color: #c82333; /* Darker red on hover */
 }
+
+/* Focus Styles */
+button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.5); /* Add custom focus outline */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    button {
+        font-size: 12px; /* Smaller font size for mobile */
+        padding: 6px 10px; /* Reduced padding for mobile */
+    }
+}
+
+.btnLink {
+    text-decoration: none; /* Remove underline from link */
+    display: inline-block; /* Make the link behave like a block-level element */
+    margin: 0 5px; /* Margin for spacing between buttons */
+}
+
+.btnBack-order {
+    background-color: #2c3e50; /* Dark blue for back button */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for hover effects */
+}
+
+.btnBack-order:hover {
+    background-color: #1a242f; /* Darker shade on hover */
+    transform: scale(1.03); /* Slightly enlarge on hover for effect */
+}
+
 
 /* Menu Form Section */
 .body-menuform {

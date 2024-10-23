@@ -1,11 +1,10 @@
 <?php
 include('database/connection.php');
-if($_SESSION['user']!=''){
-    //execute command at this page
 
-// Prepare the SQL query to fetch all orders
-$sqldisplay = "SELECT * FROM staff";
-$resultdisplay = $con->query($sqldisplay);
+if ($_SESSION['user'] != '') {
+    // Prepare the SQL query to fetch all orders
+    $sqldisplay = "SELECT * FROM staff";
+    $resultdisplay = $con->query($sqldisplay);
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +14,7 @@ $resultdisplay = $con->query($sqldisplay);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aida Station</title>
-    <link rel="stylesheet" href="css/kitchen.css">
+    <link rel="stylesheet" href="css/orderdetail.css">
 </head>
 <body>
     <div class="container">
@@ -33,10 +32,9 @@ $resultdisplay = $con->query($sqldisplay);
                         ?>
                         <div class="order-card" onclick="selectOrder(<?= $data['orid']; ?>)">
                             <p>Meja: <?= htmlspecialchars($data['ortable']); ?></p>
-                            
                             <p>Nama Pesanan: <?= htmlspecialchars($data['orname']); ?></p>
-                            <br>
                             <p>Tarikh Pesanan: <?= htmlspecialchars($data['ordate']); ?></p>
+                            <!-- Removed the update button here -->
                         </div>
                         <?php
                     }
@@ -51,12 +49,11 @@ $resultdisplay = $con->query($sqldisplay);
             <a href="removeorder.php?cid=" id="removeLink">
                 <button class="btnCancel">BATAL</button>
             </a>
-            <a href="recent-order.php" class="btnLink">
-    <button class="btnRecent-order">PESANAN LEPAS</button>
-</a>
-
             <a href="staff.php" class="btnLink">
                 <button class="btnBack-order">KEMBALI</button>
+            </a>
+            <a href="recent-order.php" class="btnLink">
+                <button class="btnRecent-order">PESANAN LEPAS</button>
             </a>
         </div>
 
@@ -67,7 +64,6 @@ $resultdisplay = $con->query($sqldisplay);
 
         function selectOrder(orderId) {
             selectedOrderId = orderId;
-            document.getElementById('prepareLink').href = 'prepared.php?cid=' + selectedOrderId;
             document.getElementById('removeLink').href = 'removeorder.php?cid=' + selectedOrderId;
         }
     </script>
@@ -75,8 +71,7 @@ $resultdisplay = $con->query($sqldisplay);
 </body>
 </html>
 <?php
-}
-else{
+} else {
     header('location:login.php');
 }
 ?>
