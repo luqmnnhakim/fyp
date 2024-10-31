@@ -92,9 +92,7 @@ while ($data = $resultdisplay->fetch_assoc()) {
             <a href="staff.php" class="btnLink">
                 <button class="btnBack-order">BACK</button>
             </a>
-            <a href="recent-order.php" class="btnLink">
-                <button class="btnRecent-order">RECENT ORDER</button>
-            </a>
+            
         </div>
 
     </div>
