@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,17 +137,15 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
 
-    hamburger.addEventListener('click', function() {
-        // Toggle class 'active' pada kedua elemen: hamburger dan navMenu
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
+        hamburger.addEventListener('click', function() {
+            // Toggle class 'active' pada kedua elemen: hamburger dan navMenu
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
     });
-});
-
-
 </script>
 </body>
 </html>

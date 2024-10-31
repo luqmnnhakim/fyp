@@ -11,18 +11,18 @@ if ($_SESSION['user'] != '') {
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekod Jualan</title>
+    <title>Sales Records</title>
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body class="body-sales">
     <div class="sales-container">
-        <h2 class="h2-sales">Rekod Jualan</h2>
+        <h2 class="h2-sales">Sales Records</h2>
         <table class="table-sales">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Tarikh</th>
-                    <th>Jumlah Jualan</th>
+                    <th>Date</th>
+                    <th>Total Sales</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -38,8 +38,8 @@ if ($_SESSION['user'] != '') {
                     <td><?= htmlspecialchars($value['salestotal']); ?></td>
                     <td>
                         <div class="button-container">
-                            <button class="view-btnSales" onclick="window.location.href='viewsales.php?cid=<?= $value['salesid']; ?>';">Lihat</button>
-                            <button class="remove-btnSales" onclick="if(confirm('Adakah Anda Pasti Dengan Pilihan Anda?')) { window.location.href='removesales.php?cid=<?= $value['salesid']; ?>'; }">Buang</button>
+                            <button class="view-btnSales" onclick="window.location.href='viewsales.php?cid=<?= $value['salesid']; ?>';">View</button>
+                            <button class="remove-btnSales" onclick="if(confirm('Are you sure you want to proceed?')) { window.location.href='removesales.php?cid=<?= $value['salesid']; ?>'; }">Remove</button>
                         </div>
                     </td>
                 </tr>

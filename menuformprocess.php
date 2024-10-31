@@ -26,7 +26,7 @@ if ($_SESSION['user'] != '') {
 
         // If everything is ok, try to upload file
         if ($uploadOk == 0) {
-            echo "Maaf, Sila Cuba Lagi.";
+            echo "Sorry, Please try again.";
         } else {
             if (move_uploaded_file($image["tmp_name"], $targetFile)) {
                 // Insert into menu table, including the description
@@ -39,7 +39,7 @@ if ($_SESSION['user'] != '') {
                     echo "Error: " . $con->error;
                 }
             } else {
-                echo "Maaf, Sila Cuba Lagi.";
+                echo "Sorry, Please try again.";
             }
         }
     }

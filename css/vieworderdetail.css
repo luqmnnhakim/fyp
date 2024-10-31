@@ -1,0 +1,123 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Body Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px; /* Further reduced max width */
+    width: 90%; /* Responsive width */
+    margin: 20px auto; /* Center container */
+    padding: 10px; /* Reduced padding */
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    font-size: 1.8rem; /* Reduced font size */
+    margin-bottom: 15px; /* Spacing */
+    color: #2c3e50; /* Darker text color */
+}
+
+/* Order List Styles */
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    background-color: #ecf0f1; /* Light gray background for each order */
+    border: 1px solid #bdc3c7; /* Border around each order */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Adjusted padding inside order items */
+    margin-bottom: 10px; /* Space between order items */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transition effects */
+}
+
+li:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on hover */
+}
+
+strong {
+    color: #34495e; /* Darker color for labels */
+    display: block; /* Make strong elements block for better spacing */
+    margin-bottom: 5px; /* Space between label and content */
+}
+
+/* Button Styles */
+.btnBack-order, .btnCancel-order {
+    display: block; /* Block-level elements for alignment */
+    width: 100%; /* Full width for buttons */
+    padding: 10px; /* Padding for buttons */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    text-align: center; /* Center text */
+    margin-top: 10px; /* Space above buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effect */
+}
+
+.btnBack-order {
+    background-color: #2c3e50; /* Dark blue background for back button */
+    color: white; /* White text */
+}
+
+.btnBack-order:hover {
+    background-color: #1a242f; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Cancel Button Styles */
+.btnCancel-order {
+    background-color: #e74c3c; /* Red background for cancel button */
+    color: white; /* White text */
+}
+
+.btnCancel-order:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.6rem; /* Smaller title font size for mobile */
+    }
+    
+    .container {
+        width: 95%; /* Slightly wider on smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4rem; /* Further reduced font size for very small screens */
+    }
+
+    .container {
+        width: 100%; /* Full width on very small screens */
+        margin: 10px; /* Reduce margin for small screens */
+    }
+}

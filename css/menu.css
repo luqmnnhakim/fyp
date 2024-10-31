@@ -5,11 +5,12 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
+    line-height: 1.6; /* Improved readability */
 }
 
-h2 {
+h2, h3 {
     text-align: center;
-    color: #5A5A5A; /* A soft gray for h2 */
+    color: #5A5A5A;
 }
 
 .container {
@@ -24,9 +25,9 @@ h2 {
 
 /* Header Styles */
 .header {
-    background-color: #B22222; /* Dark red color */
+    background-color: #B22222;
     color: white;
-    padding: 15px; /* Adjusted padding */
+    padding: 20px;
     border-radius: 8px;
     text-align: center;
     margin-bottom: 20px;
@@ -34,78 +35,138 @@ h2 {
 
 .header h1 {
     margin: 0;
-    font-size: 24px; /* Slightly reduced font size */
+    font-size: 2.5rem; /* Responsive font size */
 }
 
 .header form {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Reduced gap */
-    margin-top: 10px; /* Reduced margin */
+    gap: 15px;
+    margin-top: 10px;
     flex-wrap: wrap;
 }
 
 .header label {
-    font-size: 16px;
+    font-size: 1rem; /* Improved font size for readability */
     font-weight: bold;
 }
 
 .header input[type="number"] {
-    padding: 8px; /* Smaller padding */
-    width: 100px; /* Adjusted width */
+    padding: 10px;
+    width: 120px;
     border: 2px solid #ddd;
-    border-radius: 4px;
+    border-radius: 5px;
     outline: none;
     transition: border-color 0.3s ease;
 }
 
 .header input[type="number"]:focus {
-    border-color: #B22222; /* Dark red on focus */
+    border-color: #B22222;
 }
 
-.header button {
-    background-color: #ffffff;
-    color: #B22222; /* Dark red for button text */
-    padding: 8px 15px; /* Reduced padding */
-    border: 2px solid #B22222; /* Dark red border */
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.header button:hover {
-    background-color: #8B0000; /* Darker red on hover */
+/* Table Number Button */
+.header button[type="submit"] {
+    background-color: #B22222;
+    padding: 10px 20px;
+    font-size: 1rem; /* Responsive font size */
+    border: none;
+    border-radius: 5px;
     color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Styling for Category Headers */
+.header button[type="submit"]:hover {
+    background-color: #8B0000;
+}
+
+/* General Button Styles */
+.button {
+    background-color: #B22222;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Added border-radius for all buttons */
+    cursor: pointer;
+    font-size: 1rem; /* Responsive font size */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #8B0000;
+    transform: translateY(-2px);
+}
+
+/* Specific Button Classes */
+.add-cart-btn, .detail-btn, .checkout-btn, .remove-btn, .order-btn, .close-btn, .back-btn {
+    @extend .button;
+}
+
+/* Detail Button */
+.detail-btn {
+    background-color: #B22222;
+    padding: 10px 20px; /* Consistent padding with add-cart-btn */
+    border: none;
+    border-radius: 5px; /* Same border radius as add to cart */
+    color: white;
+    font-size: 1rem; /* Responsive font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-right: 10px; /* Space between detail and add to cart buttons */
+}
+
+.detail-btn:hover {
+    background-color: #8B0000;
+}
+
+/* Add to Cart Button */
+.add-cart-btn {
+    background-color: #1E90FF; /* Blue color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Same border radius */
+    color: white;
+    font-size: 1rem; /* Responsive font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Space above button */
+}
+
+.add-cart-btn:hover {
+    background-color: #1C86EE; /* Slightly darker blue on hover */
+}
+
+/* Category Header */
 h3 {
-    background-color: #B22222; /* Dark red for category headers */
+    background-color: #B22222;
     color: #fff;
-    padding: 12px;
+    padding: 15px;
     border-radius: 8px;
     text-align: center;
-    margin: 20px 0 10px; /* Top and bottom margins */
-    font-size: 20px;
+    margin: 20 px 0 15px;
+    font-size: 1.75rem; /* Responsive font size */
     font-weight: bold;
 }
 
-/* Styling for Menu Items within each category */
+/* Menu Items */
 .menu-items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Increased gap for better spacing */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjusted for mobile */
+    gap: 15px; /* Reduced gap for better fit */
     margin-bottom: 20px;
 }
 
 .menu-item {
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 15px; /* Increased padding for better touch target */
+    padding: 10px; /* Reduced padding for mobile */
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .menu-item:hover {
@@ -122,35 +183,18 @@ h3 {
 
 .menu-item p {
     margin: 5px 0;
-    font-size: 14px;
+    font-size: 0.875rem; /* Responsive font size */
     color: #333;
 }
 
 .menu-item strong {
     display: block;
-    margin-bottom: 8px;
-    font-size: 16px;
+    margin-bottom: 10px;
+    font-size: 1rem; /* Responsive font size */
     color: #000;
 }
 
-/* Button styles for Menu Items */
-.menu-item button {
-    background-color: #B22222; /* Dark red for menu item buttons */
-    color: white;
-    border: none;
-    padding: 8px 12px; /* Adjusted padding */
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.menu-item button:hover {
-    background-color: #8B0000; /* Darker red on hover */
-    transform: scale(1.05); /* Slight scaling effect */
-}
-
-/* Popup styles */
+/* Popup */
 .popup {
     display: none;
     position: fixed;
@@ -158,158 +202,154 @@ h3 {
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background-color: #B22222; /* Dark red for popup */
+    background-color: #B22222;
     color: white;
     border-radius: 5px;
     z-index: 1000;
 }
 
-/* Modal styles */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    width: 90%;
-    max-width: 450px; /* Increased max-width for better visibility */
-    text-align: center;
-}
-
-.modal-content img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-/* Close button for modals */
+/* Close Button for Modal */
 .close-btn {
-    background: #e74c3c;
+    background-color: #e74c3c;
     color: white;
     border: none;
-    padding: 8px 12px; /* Adjusted padding */
-    border-radius: 4px;
+    padding: 10px 15px;
+    border-radius: 5px; /* Consistent border radius */
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.3s ease;
 }
 
 .close-btn:hover {
-    background-color: #c0392b; /* Darker red on hover */
+    background-color: #c0392b;
 }
 
-/* Back button styles */
+/* Back Button */
 .back-btn {
-    display: inline-block; /* Make the link behave like a button */
-    background-color: #B22222; /* Dark red */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Padding */
-    border-radius: 4px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    text-align: center; /* Center the text */
-    transition: background-color 0.3s ease; /* Transition effect */
-    margin-top: 10px; /* Space above */
+    display: inline-block;
+    background-color: #B22222;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px; /* Consistent border radius */
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 .back-btn:hover {
-    background-color: #8B0000; /* Darker red on hover */
+    background-color: #8B0000;
 }
 
+/* Order Button */
 .order-btn {
-    background-color: lightgreen; /* Dark red background for order button */
-    color: white; /* White text for contrast */
-    margin-top: 10px; /* Space above the order button */
-    padding: 10px; /* Consistent padding */
-    width: 100%; /* Full width of the container */
-    border: none; /* Remove border for a cleaner look */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px; /* Consistent border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .order-btn:hover {
+    background-color: #45a049;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    padding: 10px 20px;
+    font-size: 1rem; /* Responsive font size */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Consistent border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+}
+
+.checkout-btn:hover {
+    background-color: #45a049;
+}
+
+.quantity-btn {
+    background-color: #B22222; /* Red color for the button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px; /* Consistent border radius */
+    cursor: pointer;
+    font-size: 0.875rem; /* Responsive font size */
+    margin: 0 5px; /* Space between buttons */
+}
+
+.quantity-btn:hover {
     background-color: #8B0000; /* Darker red on hover */
 }
 
+.quantity-display {
+    font-size: 0.875rem; /* Responsive font size */
+    margin: 0 5px; /* Space around the quantity display */
+}
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .menu-item {
-        width: calc(50% - 10px); /* Two items per row on smaller screens */
-        padding: 12px; /* Adjust padding for smaller screens */
-    }
-    
     .header {
-        padding: 15px; /* Adjust padding for smaller screens */
+        padding: 15px;
     }
-    
+
     .header h1 {
-        font-size: 22px; /* Adjust font size for smaller screens */
+        font-size: 1.75rem; /* Adjusted font size for smaller screens */
     }
-    
-    .header button, .header input[type="number"] {
-        padding: 8px; /* Adjust padding for inputs and buttons */
-        font-size: 14px; /* Adjust font size for inputs and buttons */
+
+    .header label {
+        font-size: 0.875rem; /* Smaller font size for mobile */
+    }
+
+    .header input[type="number"], .header button {
+        width: 100%; /* Full width for inputs and buttons */
+        padding: 10px; /* Adjust padding for better touch targets */
+    }
+
+    .button {
+        width: 100%; /* Full width buttons */
+        font-size: 0.875rem; /* Responsive font size for buttons */
+    }
+
+    .menu-items {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* More items on smaller screens */
+    }
+
+    .menu-item {
+        padding: 10px; /* Reduced padding for mobile */
     }
 }
 
 @media (max-width: 480px) {
     .menu-item {
-        width: 100%; /* One item per row on mobile */
+        padding: 8px; /* Further reduce padding on mobile */
     }
 
     .header h1 {
-        font-size: 20px; /* Further adjust font size for mobile */
+        font-size: 1.5rem; /* Smaller font size for mobile */
     }
 
-    .header input[type="number"] {
-        width: 80%; /* Full width for inputs */
-        padding: 8px; /* Consistent padding */
-        border-radius: 7px;
+    .header label {
+        font-size: 0.875rem; /* Smaller font size for mobile */
     }
 
-    .header form {
-        flex-direction: column; /* Stack form elements on mobile */
+    .header input[type="number"], .header button {
+        width: 100%; /* Full width for inputs and buttons */
+        padding: 10px; /* Adjust padding for better touch targets */
     }
 
-    .header button {
-        width: 50%; /* Adjust button width */
-        padding: 7px; /* Consistent padding */
-        border-radius: 15px;
+    .button {
+        width: 100%; /* Full width buttons */
+        font-size: 0.875rem; /* Responsive font size for buttons */
     }
 
-    .order-btn {
-        margin-top: 10px; /* Add space above the order button */
-        padding: 10px; /* Ensure consistent padding */
-        width: 100%; /* Make order button full width */
+    .menu-items {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); /* Adjust for maximum fit on mobile */
     }
-
-    .detail-btn{
-        margin-top: 10px; /* Add space above the order button */
-        padding: 10px; /* Ensure consistent padding */
-        width: 100%; /* Make order button full width */
-        
-    }
-}
-
-/* CSS for the logo below the h1 with shadow */
-.header-logo {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    border-radius: 8px; /* Rounded corners (optional) */
-}
-
-/* Additional styling if needed */
-.header-logo:hover {
-    opacity: 0.8; /* Slight hover effect */
-    transition: opacity 0.3s ease-in-out; /* Smooth hover transition */
 }

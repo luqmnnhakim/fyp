@@ -18,14 +18,14 @@ if($resultdisplay->num_rows > 0) {
 <body class="body-sales">
 
     <div class="sales-container">
-        <h2 class="h2-sales">Maklumat Staff </h2>
+        <h2 class="h2-sales">Staff Information </h2>
         <table class="table-sales">
             <thead>
                 <tr>
-                    <th>No.</th>
-                    <th>Nama Pengguna</th>
-                    <th>KataLaluan</th>
-                    <th>Kategori</th>
+                    <th>No</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Category</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -41,8 +41,8 @@ if($resultdisplay->num_rows > 0) {
                     <td><?= $value['usercat']; ?></td>
                     <td>
                     <div class="button-container">
-        <button class="view-btnSales" onclick="window.location.href='viewstaff.php?cid=<?= $value['adid']; ?>';">Lihat</button>
-        <button class="remove-btnSales" onclick="if(confirm('Adakah Anda Pasti Dengan Pilihan Anda?')) { window.location.href='removestaff.php?cid=<?= $value['adid']; ?>'; }">Buang</button>
+        <button class="view-btnSales" onclick="window.location.href='viewstaff.php?cid=<?= $value['adid']; ?>';">View</button>
+        <button class="remove-btnSales" onclick="if(confirm('Adakah Anda Pasti Dengan Pilihan Anda?')) { window.location.href='removestaff.php?cid=<?= $value['adid']; ?>'; }">Remove</button>
 
     </div>
  </td>

@@ -5,35 +5,35 @@
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
-<body class=body-login>
+<body class="body-login">
     <div class="login-container">
-        <h2 class=h2-login>Login</h2>
+        <h2 class="h2-login">Login</h2>
         <form method="POST" action="loginprocess.php">
-            <div class="form-grouplogin">
-                <label for="username">Nama Pengguna</label>
-                <input type="text" name="username" placeholder="Masukkan Nama Anda" required>
-            </div>
-            <div class="form-grouplogin">
-                <label for="password">KataLaluan</label>
-                <input type="password" name="password" placeholder="Masukkan KataLaluan Anda" required>
-            </div>
-            <div class="form-grouplogin">
-                <button type="submit" name="login">Masuk</button>
+            <div class="form-group-login">
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="Enter Your Name" required>
+            </div><br>
+            <div class="form-group-login">
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Enter Your Password" required>
+            </div><br>
+            <div class="form-group-login">
+                <button type="submit" name="login">Login</button>
             </div>
             
-            <div class="form-grouplogin">
-                <a href="#" class="forget-password">Lupa KataLaluan?</a>
+            <div class="form-group-login">
+                <a href="#" class="forget-password">Forgot Password?</a>
             </div>
         </form>
     </div>
     <?php
-        if(@$_GET['invalid']=='yes'){
+        if (@$_GET['invalid'] == 'yes') {
             ?>
     <script>
-        alert("Sila Masukkan Nama atau KataLaluan Yang Betul ");
+        alert("Please Enter Valid Username or Password");
     </script>
-        <?php
+            <?php
         }
-        ?>
+    ?>
 </body>
 </html>

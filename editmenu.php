@@ -19,11 +19,11 @@ if ($_SESSION['user'] != '') {
 </head>
 <body class="body-menuform">
     <div class="form-containerform">
-        <h2 class="h2-menuform">Ubah Menu</h2>
+        <h2 class="h2-menuform">Edit Menu</h2>
         <form method="post" action="editmenuprocess.php" enctype="multipart/form-data">
             <input type="hidden" name="menuid" value="<?= $data['id']; ?>" />
             <div class="form-groupform">
-                <label for="type">Kategori</label>
+                <label for="type">Category</label>
                 <select name="type" required>
                     <option value="makanan" <?= $data['category'] == 'makanan' ? 'selected' : ''; ?>>Makanan</option>
                     <option value="minuman" <?= $data['category'] == 'minuman' ? 'selected' : ''; ?>>Minuman</option>
@@ -31,11 +31,11 @@ if ($_SESSION['user'] != '') {
                 </select>
             </div>
             <div class="form-groupform">
-                <label for="name">Nama</label>
+                <label for="name">Name</label>
                 <input type="text" name="name" placeholder="Enter menu name" value="<?= $data['name']; ?>" required>
             </div>
             <div class="form-groupform">
-                <label for="price">Harga</label>
+                <label for="price">Price</label>
                 <input type="text" name="price" placeholder="Enter price" value="<?= $data['price']; ?>" required>
             </div>
             <div class="form-groupform">
@@ -43,11 +43,11 @@ if ($_SESSION['user'] != '') {
                 <textarea name="description" placeholder="Enter description" rows="4" required><?= htmlspecialchars($data['description']); ?></textarea>
             </div>
             <div class="form-groupform">
-                <label for="image">Gambar</label>
+                <label for="image">Picture</label>
                 <input type="file" name="image" accept="image/*">
             </div>
             <div class="form-groupform">
-                <button type="submit" name="edit">Ubah Sekarang</button>
+                <button type="submit" name="edit">Edit</button>
             </div>
         </form>
     </div>

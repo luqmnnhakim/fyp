@@ -1,5 +1,6 @@
 <?php
 include('database/connection.php');
+
 if ($_SESSION['user'] != '') {
     // Get the sales ID from the URL parameter
     $salesId = intval($_GET['cid']);
@@ -10,7 +11,7 @@ if ($_SESSION['user'] != '') {
     $salesDate = '';
     if ($resultSalesDate->num_rows > 0) {
         $salesData = $resultSalesDate->fetch_assoc();
-        $salesDate = $salesData['salesdate'];
+        $salesDate = date('Y-m-d', strtotime($salesData['salesdate'])); // Format date to 'YYYY-MM-DD'
     }
 
     // Fetch all settled orders for the specific date
@@ -33,11 +34,11 @@ if ($_SESSION['user'] != '') {
         <table class="table-sales">
             <thead>
                 <tr>
-                    <th>ID Pesanan</th>
-                    <th>Meja</th>
-                    <th>Nama Pesanan</th>
-                    <th>Jumlah Harga</th>
-                    <th>Tarikh</th>
+                    <th>Order ID</th>
+                    <th>Table</th>
+                    <th>Order Name</th>
+                    <th>Total Price</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,7 +51,7 @@ if ($_SESSION['user'] != '') {
                             <td><?= htmlspecialchars($order['ortable']); ?></td>
                             <td><?= htmlspecialchars($order['orname']); ?></td>
                             <td>RM<?= htmlspecialchars($order['totalprice']); ?></td>
-                            <td><?= htmlspecialchars($order['ordate']); ?></td>
+                            <td><?= date('Y-m-d', strtotime($order['ordate'])); ?></td> <!-- Format date for ordates -->
                         </tr>
                         <?php
                     }
@@ -61,7 +62,7 @@ if ($_SESSION['user'] != '') {
             </tbody>
         </table>
         <a href="sales.php" class="btnLink">
-            <button class="btnBack-order">Kembali</button>
+            <button class="btnBack-order">Back</button>
         </a>
     </div>
 </body>

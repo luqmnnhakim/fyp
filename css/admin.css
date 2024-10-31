@@ -262,6 +262,7 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
     display: inline-flex; /* Allow alignment for icons if needed */
     align-items: center; /* Center items vertically */
+    text-align: center;
 }
 
 /* Edit Button Styles */

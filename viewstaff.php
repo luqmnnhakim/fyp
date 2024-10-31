@@ -22,15 +22,15 @@ $data=$resultdisplay->fetch_assoc();
     <h1>Staff Details</h1>
     <table class="staff-details-table">
         <tr>
-            <th>Nama</th>
+            <th>Name</th>
             <td data-label="Name"><?= htmlspecialchars($data['adname']); ?></td>
         </tr>
         <tr>
-            <th>No. IC</th>
+            <th>IC No</th>
             <td data-label="IC No"><?= htmlspecialchars($data['adic']); ?></td>
         </tr>
         <tr>
-            <th>Jantina</th>
+            <th>Gender</th>
             <td data-label="Gender"><?= htmlspecialchars($data['adgender']); ?></td>
         </tr>
         <tr>
@@ -38,15 +38,15 @@ $data=$resultdisplay->fetch_assoc();
             <td data-label="Email"><?= htmlspecialchars($data['ademail']); ?></td>
         </tr>
         <tr>
-            <th>Alamat</th>
+            <th>Address</th>
             <td data-label="Address"><?= htmlspecialchars($data['address']); ?></td>
         </tr>
         <tr>
-            <th>Nama Pengguna</th>
+            <th>Username</th>
             <td data-label="Address"><?= htmlspecialchars($data['adusername']); ?></td>
         </tr>
         <tr>
-            <th>KataLaluan</th>
+            <th>Password</th>
             <td data-label="Address"><?= htmlspecialchars($data['adpassword']); ?></td>
         </tr>
     </table>

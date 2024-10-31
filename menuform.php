@@ -11,15 +11,15 @@ if ($_SESSION['user'] != '') {
     <title>Tambah Menu</title>
     <link rel="stylesheet" href="css/admin.css">
     <style>
-        /* Add your styles here */
+    
     </style>
 </head>
 <body class="body-menuform">
     <div class="form-containerform">
-        <h2 class="h2-menuform">Tambah Menu Baru</h2>
+        <h2 class="h2-menuform">Add New Menu</h2>
         <form method="post" action="menuformprocess.php" enctype="multipart/form-data">
             <div class="form-groupform">
-                <label for="type">Kategori</label>
+                <label for="type">Category</label>
                 <select name="type" required>
                     <option value="makanan">Makanan</option>
                     <option value="minuman">Minuman</option>
@@ -28,12 +28,12 @@ if ($_SESSION['user'] != '') {
             </div>
 
             <div class="form-groupform">
-                <label for="name">Nama</label>
+                <label for="name">Name</label>
                 <input type="text" name="name" placeholder="Enter menu name" required>
             </div>
 
             <div class="form-groupform">
-                <label for="price">Harga</label>
+                <label for="price">Price</label>
                 <input type="text" name="price" placeholder="Enter price" required>
             </div>
 
@@ -43,12 +43,12 @@ if ($_SESSION['user'] != '') {
             </div>
 
             <div class="form-groupform">
-                <label for="image">Gambar</label>
+                <label for="image">Picture</label>
                 <input type="file" name="image" accept="image/*" required>
             </div>
 
             <div class="form-groupform">
-                <button type="submit" name="add">Kemaskini</button>
+                <button type="submit" name="add">Update</button>
             </div>
         </form>
     </div>

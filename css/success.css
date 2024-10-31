@@ -1,0 +1,51 @@
+/* Success Page Styles */
+body {
+    background-color: #f0f8ff; /* Light blue background */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 28px; /* Larger font size for the title */
+    color: #228B22; /* Dark green color for the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+p {
+    font-size: 18px; /* Slightly larger font for the text */
+    color: #555;
+    margin-bottom: 30px; /* Space below the paragraph */
+}
+
+/* Button to go back to menu */
+.back-btn {
+    background-color: #B22222; /* Dark red for button */
+    color: white; /* White text */
+    padding: 12px 20px; /* Comfortable padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center the text */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #8B0000; /* Darker red on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}

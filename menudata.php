@@ -47,9 +47,9 @@ if ($_SESSION['user'] != '') {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Kategori</th>
-                    <th>Nama</th>
-                    <th>Harga (RM)</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Price (RM)</th>
                     <th></th>
                     <th>Action</th>
                 </tr>
@@ -66,8 +66,8 @@ if ($_SESSION['user'] != '') {
                     <td><?= $value['price']; ?></td>
                     <td></td>
                     <td>
-                        <button class="edit-btn" onclick="window.location.href='editmenu.php?cid=<?= $value['id']; ?>';">Ubah</button>
-                        <button class="remove-btn" onclick="if(confirm('Adakah Anda Pasti Dengan Pilihan Anda?')) { window.location.href='removemenu.php?cid=<?= $value['id']; ?>'; }">Buang</button>
+                        <button class="edit-btn" onclick="window.location.href='editmenu.php?cid=<?= $value['id']; ?>';">Edit</button>
+                        <button class="remove-btn" onclick="if(confirm('Are you sure you want to proceed?')) { window.location.href='removemenu.php?cid=<?= $value['id']; ?>'; }">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -82,9 +82,9 @@ if ($_SESSION['user'] != '') {
     <div id="update-popup" class="popup" style="<?php echo (isset($_GET['added']) || isset($_GET['updated'])) ? 'display: block;' : 'display: none;'; ?>">
         <?php
             if (isset($_GET['added'])) {
-                echo 'Menu Telah Ditambah!';
+                echo 'Menu has been added!';
             } elseif (isset($_GET['updated'])) {
-                echo 'Menu Telah Dikemaskini!';
+                echo 'Menu has been updated!';
             }
         ?>
     </div>
@@ -92,9 +92,9 @@ if ($_SESSION['user'] != '') {
     <script>
         // Show the popup based on the action
         <?php if (isset($_GET['added'])): ?>
-            showPopup('Menu Telah Ditambah!');
+            showPopup('Menu has been added!');
         <?php elseif (isset($_GET['updated'])): ?>
-            showPopup('Menu Telah Dikemaskini!');
+            showPopup('Menu has been updated!');
         <?php endif; ?>
     </script>
 
@@ -102,7 +102,7 @@ if ($_SESSION['user'] != '') {
 </html>
 <?php
     } else {
-        echo "Tiada Pesanan Yang Dibuat";
+        echo "No orders have been made.";
     }
 } else {
     header('location:login.php');
