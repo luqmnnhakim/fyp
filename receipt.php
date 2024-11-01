@@ -1,24 +1,39 @@
 <?php
+include('database/connection.php');
 
-include('database/connection.php'); // Connect to the database
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['checkout'])) {
+    // Get the table number from POST and ensure it's an integer
+    $tableNumber = isset($_POST['table_number']) ? intval($_POST['table_number']) : 0;
+    
+    // Verify that we have a valid table number
+    if ($tableNumber <= 0) {
+        die("Invalid table number");
+    }
 
-// Check if the cart is empty
-if (empty($_SESSION['cart'])) {
-    header('Location: menu.php'); // Redirect to menu if cart is empty
-    exit();
+    // Loop through the cart and insert each item as an order
+    foreach ($_SESSION['cart'] as $id => $item) {
+        $orname = $con->real_escape_string($item['name']);
+        $quantity = intval($item['quantity']);
+        $totalprice = floatval($item['price']) * $quantity;
+
+        $sqlInsertOrder = "INSERT INTO staff (ortable, orname, totalprice, ordate) 
+                          VALUES ($tableNumber, '$orname', $totalprice, NOW())";
+        
+        if (!$con->query($sqlInsertOrder)) {
+            // Handle error
+            echo "Error: " . $con->error;
+            exit;
+        }
+    }
+
+    // Clear the cart after successful checkout
+    $_SESSION['cart'] = [];
+
+    // Redirect to a success page
+    header('Location: success.php');
+    exit;
 }
-
-// Calculate the total price
-$totalPrice = 0;
-foreach ($_SESSION['cart'] as $item) {
-    $totalPrice += $item['price'] * $item['quantity'];
-}
-
-// Check if the table number is set
-$tableNumber = isset($_GET['table_number']) ? intval($_GET['table_number']) : null;
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

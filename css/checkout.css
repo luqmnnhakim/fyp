@@ -26,7 +26,7 @@ body {
 }
 
 .checkout-btn {
-    background-color: #28a745; /* Green */
+    background-color: #28a745;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -35,11 +35,11 @@ body {
 }
 
 .checkout-btn:hover {
-    background-color: #218838; /* Darker green */
+    background-color: #218838; 
 }
 
 .remove-btn {
-    background-color: #e74c3c; /* Red color */
+    background-color: #e74c3c; 
     color: white;
     border: none;
     padding: 5px 10px;
@@ -50,7 +50,7 @@ body {
 }
 
 .remove-btn:hover {
-    background-color: #c0392b; /* Darker red on hover */
+    background-color: #c0392b; 
 }
 
 .popup {
@@ -61,5 +61,5 @@ body {
     color: white;
     padding: 10px;
     border-radius: 5px;
-    display: none; /* Hidden by default */
+    display: none; 
 }

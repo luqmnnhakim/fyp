@@ -263,10 +263,11 @@ $cartCount = count($_SESSION['cart']); // Count items in cart
                             </li>
                         <?php endforeach; ?>
                     </ul>
-                    <form method="POST" action="receipt.php">
-                        <input type="hidden" name="table_number" value="<?php echo intval($_GET['table_number']); ?>">
-                        <button type="submit" name="checkout" class="checkout-btn">Checkout</button>
-                    </form>
+                   <!-- In menu.php, in the cart modal section -->
+<form method="POST" action="receipt.php">
+    <input type="hidden" name="table_number" value="<?php echo isset($_GET['table_number']) ? intval($_GET['table_number']) : 0; ?>">
+    <button type="submit" name="checkout" class="checkout-btn">Checkout</button>
+</form>
                 <?php else: ?>
                     <p>Your cart is empty.</p>
                 <?php endif; ?>

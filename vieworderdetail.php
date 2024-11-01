@@ -43,11 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cancel_orders'])) {
                             <input type="checkbox" name="order_ids[]" value="<?= htmlspecialchars($order['orid']); ?>">
                             <strong>Order Name:</strong> <?= htmlspecialchars($order['orname']); ?><br>
                             <strong>Date:</strong> <?= htmlspecialchars($order['ordate']); ?><br>
-                            <strong>Order ID:</strong> <?= htmlspecialchars($order['orid']); ?>
                         </li>
                     <?php endwhile; ?>
                 </ul>
-                <button type="submit" name="cancel_orders" class="btnCancel-order">Cancel</button>
+                <button type="submit" name="cancel_orders" class="btnCancel-order">Cancel Orders</button>
             <?php else: ?>
                 <p>No orders found for this table.</p>
             <?php endif; ?>
